@@ -1,12 +1,89 @@
+<!-- 
+    Created:    09/10/2022 
+    Programmer: Brian Zoulko
+    Notes:      Devopled a weather dashboard using server side API's.
+
+      Single space:     &nbsp;
+      Two spaces gap:   &ensp;
+      Four spaces gap:  &emsp; 
+
+    Modification
+    ============
+    09/10/2022 Brian Zoulko    Designed web-page and built weather dashboard.    
+-->
+
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Weather Dashboard</title>
-</head>
-<body>
-    
-</body>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!--** Pulled the following lines from module5_challenge to facilitate in this dashboard **-->
+        <link
+            rel="stylesheet"
+            href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        />
+        <link
+            rel="stylesheet"
+            href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+            integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+            crossorigin="anonymous"
+        />
+        <link
+            href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="./assest/css/style.css" />
+        <!--******************* Above lines were pulled from module5_challenge. *******************-->
+
+        <title>Weather Dashboard</title>
+
+    </head>
+
+    <body class="min-100-vh flex-column">
+
+        <header class="text-center text-white bg-primary">
+            <h1>Weather Dashboard</h1>
+        </header>
+
+        <main class="flex-row justify-center align-center p-4 bg-light">
+
+              <div class="card card-header text-center">
+                <h2 class="text-black col-11 bg-white">
+                  Search for a City:
+                </h2>
+              </div>
+
+              <div class="p-3">
+                <p class="card-body">
+                  Navigate to the MDN Documenation.
+                  <br /><br />
+                  Open 'script.js' and implement the location.replace method.
+                  <br /><br />
+                  This page should redirect to the 404.html page.
+                </p>
+              </div>
+
+              <div class="p-3">
+                <p class="card-body">
+                  Navigate to the MDN Documenation.
+                  <br /><br />
+                  Open 'script.js' and implement the location.replace method.
+                  <br /><br />
+                  This page should redirect to the 404.html page.
+                </p>
+              </div>
+
+              <footer class="card-footer text-center">
+                Open the console in your browser to see the responses!
+              </footer>
+        </main>
+
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script src="./assest/js/debug.js"></script>
+        <script src="./assest/js/script.js"></script>    
+
+    </body>
+
 </html>
