@@ -34,7 +34,7 @@
             href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap"
             rel="stylesheet"
         />
-        <link rel="stylesheet" href="./assest/css/style.css" />
+        <link rel="stylesheet" href="./assets/css/style.css" />
         <!--******************* Above lines were pulled from module5_challenge. *******************-->
 
         <title>Weather Dashboard</title>
@@ -51,15 +51,12 @@
 
             <section class="row">
                 
-                <div class="grid-cells cell-1 p-3">
+                <div id="search-buttons" class="grid-cells cell-1 p-3">
                     <h5><b>Search for a City:</b></h5>
-                    <input class="card p-1 my-2" type="search" aria-label="City Name"></input>
-                    <button class="btn-block btn-primary" type="button">Search</button>
+                    <input id="searchfor-city" class="card p-1 my-2" type="search" aria-label="City Name" placeholder="Highland"></input>
+                    <button id="primary-button" class="btn-block btn-primary" type="button">Search</button>
                     <hr>
-                    <button class="btn-block btn-secondary my-2">item #1</button>
-                    <button class="btn-block btn-secondary my-2">item #1</button>
-                    <button class="btn-block btn-secondary my-2">item #1</button>
-                    <button class="btn-block btn-secondary my-2">item #1</button>
+                    <div class="secondary-buttons"></div>
                 </div>
 
                 <div class="p-2 col-1 col-3 col-5 col-7 col-9 justify-content-around">
@@ -143,8 +140,8 @@
         </main>
 
         <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-        <script src="./assest/js/debug.js"></script>
-        <script src="./assest/js/script.js"></script>    
+        <script src="./assets/js/debug.js"></script>
+        <script src="./assets/js/script.js"></script>    
 
     </body>
 

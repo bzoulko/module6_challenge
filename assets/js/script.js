@@ -32,3 +32,34 @@ var day2Humidity = $("day2-city-humidity");
 var day3Humidity = $("day3-city-humidity");
 var day4Humidity = $("day4-city-humidity");
 var day5Humidity = $("day5-city-humidity");
+
+var searchButtons = $("#search-buttons");
+var searchforCity = $("#searchfor-city");
+var primaryBtn = $("#primary-button");
+var secondaryBtn = $("secondary-buttons");
+
+/* <button class="btn-block btn-secondary my-2">item #1</button>
+<button class="btn-block btn-secondary my-2">item #1</button>
+<button class="btn-block btn-secondary my-2">item #1</button>
+<button class="btn-block btn-secondary my-2">item #1</button> */
+
+primaryBtn.on("click", addCityButton);
+
+function addCityButton() {
+    var txtCityName = searchforCity.val();
+    var btnCity  = $(`<button class="btn-block btn-secondary my-2" type="button">`);
+    
+    btnCity.val(txtCityName);
+    secondaryBtn.append(btnCity);
+    searchButtons.append(secondaryBtn);
+    searchforCity.val("");
+    
+    console.log("city clicked: " + btnCity.val());
+
+    btnCity.on("click", addCity);
+    function addCity(event){
+        console.log("city clicked: " + event.val());
+    }
+}
+
+
