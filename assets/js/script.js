@@ -38,32 +38,86 @@ var searchforCity = $("#searchfor-city");
 var primaryBtn = $("#primary-button");
 var secondaryBtn = $("secondary-buttons");
 
-/* <button class="btn-block btn-secondary my-2">item #1</button>
-<button class="btn-block btn-secondary my-2">item #1</button>
-<button class="btn-block btn-secondary my-2">item #1</button>
-<button class="btn-block btn-secondary my-2">item #1</button> */
 
+// Search for button on click event for adding new cities.
 primaryBtn.on("click", addCityButton);
 
-function addCityButton() {
-    
-    addButton(searchButtons, searchforCity.val());
+// Refresh buttons saved in local storage.
+refreshButtons(searchButtons);
+
+
+/* *********************
+    Add new city button.
+************************ */
+function addCityButton() {    
+    addButton(searchButtons, searchforCity.val());    
     searchforCity.val("");
-    
 }
 
+
+/* **********************************************************
+    Refreash button container with local storage button list.
+************************************************************* */
+function refreshButtons(container){
+
+    // Pull button list from local storage.
+    const key = "button";
+    var keyValue = [""];
+    var data = getData(key);
+    if (data !== null && data !== '') {
+        keyValue = data.split(",");
+        for (var x = 0; x < keyValue.length; x++) {
+            if (keyValue[x] !== null && keyValue[x] !== '') {
+                addButton(container, keyValue[x]);
+            }
+        }
+    }
+}
+
+
+/* ***********************************************************
+    Update button container and local storage with new button.
+************************************************************** */
 function addButton(container, caption) {    
     
-    var buttonToAdd = $("<button/>", { type: "button", class: "btn-block btn-secondary my-2"});
-    buttonToAdd.text(caption);
+    // Declare new button variables.
+    const key = "button";
+    var keyValue = [""];
+    var buttonToAdd = $(`<${key}/>`, { type: key, class: "btn-block btn-secondary my-2", text: caption});
+
+    // Create/Append new button into container.
     container.append(buttonToAdd);
 
+    // Create on click event for each button added.
     buttonToAdd.on("click", addCity);
     function addCity(){
         console.log("city clicked: " + buttonToAdd.text());
     }
 
+    // Pull button list from local storage.
+    var data = getData(key);
+    if (data !== null && data !== '') keyValue = data.split(",");
+
+    // Store new button list in local storage.
+    keyValue.push(caption);
+    putData(key, keyValue);
+
 }
 
+
+/* ****************************************************************************
+    Store data in localStorage based on a key and the value or data being passed.
+******************************************************************************* */
+function putData(key, value){
+localStorage.setItem(key, value);
+}
+
+
+/* ****************************************************
+    Return the value for a specific key in local storage.
+******************************************************* */
+function getData(key) {
+return(localStorage.getItem(key));
+}
 
 
