@@ -46,20 +46,24 @@ var secondaryBtn = $("secondary-buttons");
 primaryBtn.on("click", addCityButton);
 
 function addCityButton() {
-    var txtCityName = searchforCity.val();
-    var btnCity  = $(`<button class="btn-block btn-secondary my-2" type="button">`);
     
-    btnCity.val(txtCityName);
-    secondaryBtn.append(btnCity);
-    searchButtons.append(secondaryBtn);
+    addButton(searchButtons, searchforCity.val());
     searchforCity.val("");
     
-    console.log("city clicked: " + btnCity.val());
-
-    btnCity.on("click", addCity);
-    function addCity(event){
-        console.log("city clicked: " + event.val());
-    }
 }
+
+function addButton(container, caption) {    
+    
+    var buttonToAdd = $("<button/>", { type: "button", class: "btn-block btn-secondary my-2"});
+    buttonToAdd.text(caption);
+    container.append(buttonToAdd);
+
+    buttonToAdd.on("click", addCity);
+    function addCity(){
+        console.log("city clicked: " + buttonToAdd.text());
+    }
+
+}
+
 
 
