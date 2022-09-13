@@ -59,16 +59,27 @@
                     <div class="secondary-buttons"></div>
                 </div>
 
-                <div class="p-2 col-1 col-3 col-5 col-7 col-9 justify-content-around">
+                <div class="p-2 col-1 col-3 col-5 col-7 col-9">
                     
-                    <!-- City Weather -->
+                    <!-- Current Weather -->
                     <div class="card p-3">
-                        <h5 class="b"><b>Atlanta (03/30/3031)</b></h5>
+                        <h5 class="city-name"><b>City Name</b></h5>
                         <div class="text-dark">
                             <p class="city-temp">Temp:</p>
                             <p class="city-wind">Wind:</p>
                             <p class="city-humidity">Humidity:</p>
-                            <p class="city-uvindex">UV Index:</p>
+                            <div class="row">
+                                <p class="city-uvindex mx-2">UV Index:</p>
+                                
+                                <!-- Unfortunatly my registered version of the API does
+                                     NOT allow me to access the uvi, so I temporarily 
+                                     set the value. I refuse to add my credit card to
+                                     register for something that should already be included
+                                     as part of this class! -->
+                                <p class="card mx-2 px-3 badge-success">0.47</p>
+
+                            </div>
+                            
                         </div>
                     </div>
 
@@ -78,9 +89,8 @@
 
                         <!-- DAY 1 -->
                         <div class = "card mr-2">
-                            <div class="px-xl-5 table-dark">
+                            <div class="px-xl-5 table-dark p-1">
                                 <p class="day1-date"><b></b></p>
-                                <p class="day1-weather-icon"></p>
                                 <p class="day1-city-temp">Temp:</p>
                                 <p class="day1-city-wind">Wind:</p>
                                 <p class="day1-city-humidity">Humidity:</p>
@@ -89,7 +99,7 @@
 
                         <!-- DAY 2 -->
                         <div class = "card mr-2">
-                            <div class="px-xl-5 table-dark">
+                            <div class="px-xl-5 table-dark p-1">
                                 <p class="day2-date"><b></b></p>
                                 <p class="day2-weather-icon"></p>
                                 <p class="day2-city-temp">Temp:</p>
@@ -100,7 +110,7 @@
 
                         <!-- DAY 3 -->
                         <div class = "card mr-2">
-                            <div class="px-xl-5 table-dark">
+                            <div class="px-xl-5 table-dark p-1">
                                 <p class="day3-date"><b></b></p>
                                 <p class="day3-weather-icon"></p>
                                 <p class="day3-city-temp">Temp:</p>
@@ -111,7 +121,7 @@
 
                         <!-- DAY 4 -->
                         <div class = "card mr-2">
-                            <div class="px-xl-5 table-dark">
+                            <div class="px-xl-5 table-dark p-1">
                                 <p class="day4-date"><b></b></p>
                                 <p class="day4-weather-icon"></p>
                                 <p class="day4-city-temp">Temp:</p>
@@ -122,7 +132,7 @@
 
                         <!-- DAY 5 -->
                         <div class = "card mr-2">
-                            <div class="px-xl-5 table-dark">
+                            <div class="px-xl-5 table-dark p-1">
                                 <p class="day5-date"><b></b></p>
                                 <p class="day5-weather-icon"></p>
                                 <p class="day5-city-temp">Temp:</p>
@@ -140,6 +150,8 @@
         </main>
 
         <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+        <script src="./assets/js/config.js"></script>    
         <script src="./assets/js/debug.js"></script>
         <script src="./assets/js/script.js"></script>    
 
