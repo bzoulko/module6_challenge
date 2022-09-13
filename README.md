@@ -15,6 +15,9 @@ re-load.
 * After entering a city, click the "Search" button to, not only select the current
   weather, but also gets the next 5 days forecast along with saving the city as a
   quick click button for future re-loads (AKA: History City List).
+  
+* One nice touch was creating a function to reformat the City entered into "Title
+  Case", giving it just that right touch of professionalism.
 
 
 ### Spoecial Notes:
