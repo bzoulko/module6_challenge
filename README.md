@@ -30,6 +30,6 @@ re-load.
   
 * Included "reset.css" to this project to make sure all elements start fresh.
 
-* Link to Deployed App:  
+* Link to Deployed App:  https://bzoulko.github.io/module6_challenge/
 
 ![image](https://user-images.githubusercontent.com/108200823/189926548-df5f5a37-bb9d-4159-9b27-6bcf5c68757a.png)
