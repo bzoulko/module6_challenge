@@ -1,3 +1,17 @@
+/*
+    Created:    09/10/2022 
+    Programmer: Brian Zoulko
+    Notes:      Devopled a weather dashboard using server side API's.
+
+      Single space:     &nbsp;
+      Two spaces gap:   &ensp;
+      Four spaces gap:  &emsp; 
+
+    Modification
+    ============
+    09/10/2022 Brian Zoulko    Designed web-page and built weather dashboard.    
+*/
+
 var cityName = $(".city-name");
 var cityTemp = $(".city-temp");
 var cityWind = $(".city-wind");
