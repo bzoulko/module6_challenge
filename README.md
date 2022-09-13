@@ -1,4 +1,4 @@
-# Module 06 Challenge Project - Server-Side APs - Weather Dashboard
+# Module 06 Challenge Project - Server-Side APIs - Weather Dashboard
 This program is a weather dashboard showing the current weather for a given city
 and the next 5 days forecast. Also maintaining a city history for easy click and
 re-load.
