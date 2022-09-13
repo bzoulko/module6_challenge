@@ -84,18 +84,18 @@ function addButton(container, city, bAdd) {
 
 }
 
-/*
-    Update dashboard with weather for a specific city and the next
-    5 days.
-*/
+/* ***************************************************************
+    Update dashboard with the current days weather for a specific
+    city and then load the next 5 days.
+****************************************************************** */
 function loadDashBoard(btn) {
     const cMaxDays = 5;
     var rtnCode = 0;
 
 
-    // ***************************************
-    // Declare geocoding URL search variables.
-    // ***************************************
+    // --------------------------------------------------------------------------
+    // F E T C H  Geocoding URL detail for a city to get lattitude and longitude.
+    // --------------------------------------------------------------------------
     var city = ((typeof btn == "string") ? btn : btn.text());
     var geocodeURL = cGEOCODE_URL + "&q=" + city.replace(" ","%20") + ",,&limit=3";
 
@@ -113,9 +113,9 @@ function loadDashBoard(btn) {
         } else {
 
 
-            // *************************************
-            // Declare weather URL search variables.
-            // *************************************
+            // -----------------------------------------------------
+            // F E T C H  Weather URL to obtain current city detail.
+            // -----------------------------------------------------
             var lattitude = data[0].lat;
             var longitude = data[0].lon;
             var weatherURL = cWEATHER_URL + "&q=" + city.replace(" ","%20") + "&lat=" + lattitude + "&lon=" + longitude;
@@ -133,7 +133,7 @@ function loadDashBoard(btn) {
                     btn.remove();
                 } else {
 
-                    // Current City Weather.                    
+                    // load Current City Weather.                    
                     var cityIcon = $(`<img src="https://openweathermap.org/img/wn/${data.weather[0].icon}.png" alt="Current weather image.">`);
                     cityName.text(city + " (" + getDate() + ")");
                     cityName.append(cityIcon);
@@ -143,9 +143,9 @@ function loadDashBoard(btn) {
                     cityUVIndex.text("UV Index: ");                    
 
 
-                    // ********************************************
-                    // Declare 5-Day Forecast URL search variables.
-                    // ********************************************
+                    // ---------------------------------------------------
+                    // F E T C H  5-Day Forecast URL for the current city.
+                    // ---------------------------------------------------
                     var forecastURL = cFORECAST_URL + "&lat=" + lattitude + "&lon=" + longitude + "&cnt=" + cMaxDays ;
 
                     fetch(forecastURL).then(function(response){
@@ -161,10 +161,7 @@ function loadDashBoard(btn) {
                             btn.remove();
                         } else {
                     
-                            
-                            // *******************
-                            // Set 5-Days Forecast
-                            // *******************    
+                            // Load 5-Day forecast detail.
                             for (var d = 0; d < cMaxDays; d++) {
                                 var i = d+1;
                                 var forecastIcon = $(`<img src="https://openweathermap.org/img/wn/${data.list[d].weather[0].icon}.png" alt="Forecast weather icon.">`);
@@ -241,8 +238,8 @@ function convertToTitle(stringIn){
 }
 
 
-// Search for button on click event for adding new cities.
+// Search for button ( OnClick ) event for adding cities.
 primaryBtn.on("click", addCityButton);
 
-// Refresh buttons saved in local storage.
+// Refresh button(s) from local storage.
 refreshButtons(searchButtons);
