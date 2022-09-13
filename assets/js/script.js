@@ -17,7 +17,7 @@ var imgSun
     Add new city button.
 ************************ */
 function addCityButton() {
-    addButton(searchButtons, searchforCity.val(), true);    
+    addButton(searchButtons, convertToTitle(searchforCity.val()), true);    
     searchforCity.val("");
 }
 
@@ -92,7 +92,10 @@ function loadDashBoard(btn) {
     const cMaxDays = 5;
     var rtnCode = 0;
 
+
+    // ***************************************
     // Declare geocoding URL search variables.
+    // ***************************************
     var city = ((typeof btn == "string") ? btn : btn.text());
     var geocodeURL = cGEOCODE_URL + "&q=" + city.replace(" ","%20") + ",,&limit=3";
 
@@ -109,10 +112,10 @@ function loadDashBoard(btn) {
             btn.remove();
         } else {
 
-            console.log("rtnCode = " + rtnCode);
-            console.log("url: " + geocodeURL);
 
+            // *************************************
             // Declare weather URL search variables.
+            // *************************************
             var lattitude = data[0].lat;
             var longitude = data[0].lon;
             var weatherURL = cWEATHER_URL + "&q=" + city.replace(" ","%20") + "&lat=" + lattitude + "&lon=" + longitude;
@@ -139,7 +142,10 @@ function loadDashBoard(btn) {
                     cityHumidity.text("Humidity: " + data.main.humidity + " %");
                     cityUVIndex.text("UV Index: ");                    
 
-                    // // Declare 5-Day Forecast URL search variables.
+
+                    // ********************************************
+                    // Declare 5-Day Forecast URL search variables.
+                    // ********************************************
                     var forecastURL = cFORECAST_URL + "&lat=" + lattitude + "&lon=" + longitude + "&cnt=" + cMaxDays ;
 
                     fetch(forecastURL).then(function(response){
@@ -154,9 +160,11 @@ function loadDashBoard(btn) {
                             removeCity(btn.text());
                             btn.remove();
                         } else {
+                    
                             
-                            console.log("url: " + forecastURL);
-                            // Set (x)Days Forecast    
+                            // *******************
+                            // Set 5-Days Forecast
+                            // *******************    
                             for (var d = 0; d < cMaxDays; d++) {
                                 var i = d+1;
                                 var forecastIcon = $(`<img src="https://openweathermap.org/img/wn/${data.list[d].weather[0].icon}.png" alt="Forecast weather icon.">`);
@@ -218,6 +226,18 @@ function putData(key, value){
 ******************************************************* */
 function getData(key) {
     return(localStorage.getItem(key));
+}
+
+
+/* *************************************
+    Convert string to Title Case Format.
+**************************************** */
+function convertToTitle(stringIn){
+    var stringOut = stringIn.toLowerCase().split(' ');
+    for (var i = 0; i < stringOut.length; i++) {
+        stringOut[i] = stringOut[i].charAt(0).toUpperCase() + stringOut[i].slice(1);
+    }
+    return stringOut.join(' ');
 }
 
 
