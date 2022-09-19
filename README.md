@@ -1,4 +1,4 @@
-# Module 06 Challenge Project - Server-Side APs - Weather Dashboard
+# Module 06 Challenge Project - Server-Side APIs - Weather Dashboard
 This program is a weather dashboard showing the current weather for a given city
 and the next 5 days forecast. Also maintaining a city history for easy click and
 re-load.
@@ -15,6 +15,11 @@ re-load.
 * After entering a city, click the "Search" button to, not only select the current
   weather, but also gets the next 5 days forecast along with saving the city as a
   quick click button for future re-loads (AKA: History City List).
+  
+* Errors will display when issues arise from calling the above api. But, 99.9 percent
+  of issues seem to be spelling. After an error message is alerted, the history list
+  will remove the city in question. Ergo, I would double check you're spelling and
+  re-search for the city again.
   
 * One nice touch was creating a function to reformat the City entered into "Title
   Case", giving it just that right touch of professionalism.
