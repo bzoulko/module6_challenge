@@ -14,6 +14,6 @@
 */
 
 var cAPI_KEY = ["0e23","2b66","3aad","0248","b589","0600","d1da","cf38"];
-const cGEOCODE_URL = "http://api.openweathermap.org/geo/1.0/direct?appid=" + cAPI_KEY.join('');
-const cWEATHER_URL = "http://api.openweathermap.org/data/2.5/weather?units=imperial&appid=" + cAPI_KEY.join('');
-const cFORECAST_URL = "http://api.openweathermap.org/data/2.5/forecast?units=imperial&appid=" + cAPI_KEY.join('');
+const cGEOCODE_URL = "https://api.openweathermap.org/geo/1.0/direct?appid=" + cAPI_KEY.join('');
+const cWEATHER_URL = "https://api.openweathermap.org/data/2.5/weather?units=imperial&appid=" + cAPI_KEY.join('');
+const cFORECAST_URL = "https://api.openweathermap.org/data/2.5/forecast?units=imperial&appid=" + cAPI_KEY.join('');
